@@ -26,6 +26,6 @@
     "allowUnreachableCode": false,
     
     // 禁用无法访问的代码 - 减少死代码
-    // "allowUnreachableCode": false
+    "allowUnreachableCode": false
   }
 }

@@ -1,6 +1,6 @@
 {
   // 继承基础配置（如果有）
-  // "extends": "./tsconfig.base.json",
+  "extends": "./tsconfig.base.json",
   
   "compilerOptions": {
     // 标记为复合项目 - 启用项目引用功能
@@ -10,7 +10,7 @@
     "module": "ESNext",
     
     // 模块解析策略
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     
     // Node.js环境类型
     "types": ["node"],

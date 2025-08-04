@@ -25,7 +25,7 @@
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     
     // 包含的全局类型声明
-    "types": ["vite/client", "unplugin-icons/types/vue"],
+    "types": ["vite/client", "unplugin-icons/types/vue","vite-plugin-eslint"],
     
     // === 代码质量增强 ===
     // 检查未使用的局部变量

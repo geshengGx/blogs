@@ -1,0 +1,5 @@
+# 格式化忽略文件
+dist
+node_modules
+*.md
+*.svg

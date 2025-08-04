@@ -6,12 +6,29 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
+     // === 类型检查 ===
+    // 检查所有项目
     "type-check": "tsc --build --force",
+    
+    // 单独检查前端应用
     "type-check:app": "tsc -p tsconfig.app.json --noEmit",
+    
+    // 单独检查Node配置
     "type-check:node": "tsc -p tsconfig.node.json --noEmit",
+    
+    // === 代码质量 ===
+    // 运行ESLint检查和修复
     "lint": "eslint . --ext .ts,.vue --fix --max-warnings 0",
+    
+    // 运行Prettier格式化所有文件
     "format": "prettier --write .",
+    
+    // === 组合命令 ===
+    // 准备提交：检查和修复所有问题
     "prepare": "npm run lint && npm run type-check",
+    
+    // === Git Hooks ===
+    // 安装Husky
     "postinstall": "husky install"
   },
   "lint-staged": {
@@ -29,12 +46,9 @@
   },
   "dependencies": {
     "sass": "^1.89.2",
-    "unplugin-icons": "^22.2.0",
     "vue": "^3.5.17"
   },
   "devDependencies": {
-    "@types/eslint": "^9.6.1",
-    "@types/node": "^24.1.0",
     "@typescript-eslint/eslint-plugin": "^8.38.0",
     "@typescript-eslint/parser": "^8.38.0",
     "@vitejs/plugin-vue": "^6.0.0",
@@ -48,7 +62,6 @@
     "prettier": "^3.6.2",
     "typescript": "~5.8.3",
     "vite": "^7.0.4",
-    "vite-plugin-checker": "^0.10.2",
     "vue-tsc": "^2.2.12"
   }
 }

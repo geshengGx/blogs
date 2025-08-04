@@ -10,7 +10,7 @@
     "module": "ESNext",
     
     // 模块解析策略
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     
     // Node.js环境类型
     "types": ["node"],

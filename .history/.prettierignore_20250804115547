@@ -1,0 +1,10 @@
+# Prettier 忽略文件
+# 忽略不需要格式化的文件和目录
+dist
+node_modules
+*.md
+*.svg
+*.log
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
