@@ -1,35 +1,93 @@
 {
-  // 保存时自动格式化
   "editor.formatOnSave": true,
-  
-  // 保存时执行ESLint自动修复
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+    "source.fixAll.stylelint": "explicit"
   },
-  
-  // 指定不同文件的格式化工具
+  "stylelint.enable": true,
+  "stylelint.validate": ["css", "less", "postcss", "scss", "vue", "sass", "html"],
+  "files.eol": "\n",
+  "typescript.tsdk": "node_modules/typescript/lib",
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  
-  // ESLint验证的文件类型
-  "eslint.validate": [
-    "javascript",
-    "typescript",
-    "vue"
-  ],
-  
-  // 使用Volar作为Vue的IDE支持（禁用Vetur）
-  "vetur.validation.template": false,
-  "vetur.experimental.templateInterpolationService": false,
-  
-  // TypeScript相关设置
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[less]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cSpell.words": [
+    "AMAP",
+    "apng",
+    "axios",
+    "Biao",
+    "brotli",
+    "cascader",
+    "commitlint",
+    "contentleft",
+    "contentright",
+    "daterange",
+    "datetimerange",
+    "echarts",
+    "fangda",
+    "simple",
+    "Gitee",
+    "hexs",
+    "huiche",
+    "iconfont",
+    "juejin",
+    "liquidfill",
+    "longpress",
+    "monthrange",
+    "nprogress",
+    "officedocument",
+    "openxmlformats",
+    "Pageable",
+    "persistedstate",
+    "pinia",
+    "pjpeg",
+    "Prefixs",
+    "screenfull",
+    "sortablejs",
+    "sousuo",
+    "spreadsheetml",
+    "styl",
+    "stylelint",
+    "stylelintignore",
+    "stylelintrc",
+    "suoxiao",
+    "truetype",
+    "tuichu",
+    "unplugin",
+    "VITE",
+    "vuedraggable",
+    "vueuse",
+    "Vuex",
+    "wangeditor",
+    "xiala",
+    "xiaoxi",
+    "zhongyingwen",
+    "zhuti"
+  ]
 }

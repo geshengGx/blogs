@@ -47,23 +47,23 @@ module.exports = {
     {
       files: "*.json",
       options: {
-        printWidth: 80, // 较小的行宽，因为JSON结构通常较深
-      },
+        printWidth: 80 // 较小的行宽，因为JSON结构通常较深
+      }
     },
     // Markdown文件特殊配置
     {
       files: "*.md",
       options: {
         proseWrap: "always", // 始终换行
-        tabWidth: 4, // 使用4空格缩进
-      },
+        tabWidth: 4 // 使用4空格缩进
+      }
     },
     // 配置文件特殊处理
     {
       files: ["*.yaml", "*.yml"],
       options: {
-        singleQuote: false, // YAML通常使用双引号
-      },
-    },
-  ],
+        singleQuote: false // YAML通常使用双引号
+      }
+    }
+  ]
 };

@@ -15,17 +15,9 @@
     "postinstall": "husky install"
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx,vue}": [
-      "eslint --fix --max-warnings 0",
-      "prettier --write"
-    ],
-    "vite.config.ts": [
-      "eslint --fix --max-warnings 0",
-      "prettier --write"
-    ],
-    "*.{json,md,yaml,yml}": [
-      "prettier --write"
-    ]
+    "src/**/*.{ts,tsx,vue}": ["eslint --fix --max-warnings 0", "prettier --write"],
+    "vite.config.ts": ["eslint --fix --max-warnings 0", "prettier --write"],
+    "*.{json,md,yaml,yml}": ["prettier --write"]
   },
   "dependencies": {
     "sass": "^1.89.2",

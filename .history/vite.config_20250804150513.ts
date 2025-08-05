@@ -5,7 +5,7 @@ import checker from "vite-plugin-checker";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
-    vue(),
+    vue()
     // checker({
     //   // === ESLint配置 ===
     //   eslint: {
@@ -29,7 +29,7 @@ export default defineConfig({
   // 解析配置（路径别名）
   resolve: {
     alias: {
-      "@": "/src", // 配置@指向src目录
-    },
-  },
+      "@": "/src" // 配置@指向src目录
+    }
+  }
 });

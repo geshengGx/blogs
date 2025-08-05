@@ -11,15 +11,15 @@ export default defineConfig({
       typescript: true, // 开启 TypeScript 检查
       eslint: {
         enabled: true, // 开启 ESLint 检查
-        filepath: "./src/**/*.js", // 设置检查文件路径，可以根据需求调整
-      },
-    }),
+        filepath: "./src/**/*.js" // 设置检查文件路径，可以根据需求调整
+      }
+    })
   ],
 
   // 解析配置（路径别名）
   resolve: {
     alias: {
-      "@": "/src", // 配置@指向src目录
-    },
-  },
+      "@": "/src" // 配置@指向src目录
+    }
+  }
 });

@@ -6,7 +6,7 @@ module.exports = {
   env: {
     browser: true, // 浏览器全局变量
     es2021: true, // ES2021语法支持
-    node: true, // Node.js全局变量
+    node: true // Node.js全局变量
   },
 
   // 使用Vue专用解析器
@@ -20,7 +20,7 @@ module.exports = {
     // 多项目配置 - 指定使用的tsconfig
     project: [
       "./tsconfig.app.json", // 前端应用配置
-      "./tsconfig.node.json", // Node环境配置
+      "./tsconfig.node.json" // Node环境配置
     ],
 
     // 确保从项目根目录解析tsconfig
@@ -36,7 +36,7 @@ module.exports = {
     sourceType: "module",
 
     // 实验性功能：使用TypeScript语言服务（提高性能）
-    EXPERIMENTAL_useProjectService: true,
+    EXPERIMENTAL_useProjectService: true
   },
 
   // 扩展规则集
@@ -45,7 +45,7 @@ module.exports = {
     "plugin:vue/vue3-recommended", // Vue 3官方规则
     "plugin:@typescript-eslint/recommended", // TypeScript推荐规则
     "plugin:@typescript-eslint/recommended-requiring-type-checking", // 需要类型检查的规则
-    "plugin:prettier/recommended", // Prettier集成
+    "plugin:prettier/recommended" // Prettier集成
   ],
 
   // 自定义规则
@@ -66,8 +66,8 @@ module.exports = {
       "error",
       {
         singleline: 5, // 单行最多5个属性
-        multiline: 1, // 多行每行1个属性
-      },
+        multiline: 1 // 多行每行1个属性
+      }
     ],
 
     // === TypeScript规则 ===
@@ -91,22 +91,17 @@ module.exports = {
     "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
 
     // Prettier问题作为警告
-    "prettier/prettier": "warn",
+    "prettier/prettier": "warn"
   },
 
   // 文件覆盖规则 - 针对特定文件设置不同规则
   overrides: [
     // Node环境文件特殊配置
     {
-      files: [
-        "vite.config.ts",
-        "vitest.config.ts",
-        "scripts/**/*.ts",
-        "build/**/*.ts",
-      ],
+      files: ["vite.config.ts", "vitest.config.ts", "scripts/**/*.ts", "build/**/*.ts"],
       // 指定使用Node环境的tsconfig
       parserOptions: {
-        project: "./tsconfig.node.json",
+        project: "./tsconfig.node.json"
       },
       rules: {
         // 允许使用require
@@ -116,24 +111,24 @@ module.exports = {
         "no-console": "off",
 
         // 允许使用any类型
-        "@typescript-eslint/no-explicit-any": "off",
-      },
+        "@typescript-eslint/no-explicit-any": "off"
+      }
     },
 
     // 测试文件特殊配置
     {
       files: ["**/*.spec.ts", "**/*.test.ts"],
       env: {
-        jest: true, // 添加Jest全局变量
+        jest: true // 添加Jest全局变量
       },
       rules: {
         // 测试文件中允许使用any
         "@typescript-eslint/no-explicit-any": "off",
 
         // 测试文件中允许空函数
-        "@typescript-eslint/no-empty-function": "off",
-      },
-    },
+        "@typescript-eslint/no-empty-function": "off"
+      }
+    }
   ],
 
   // 设置 - 路径解析
@@ -142,15 +137,15 @@ module.exports = {
     "import/resolver": {
       typescript: {
         // 指定所有可能的tsconfig
-        project: ["./tsconfig.app.json", "./tsconfig.node.json"],
+        project: ["./tsconfig.app.json", "./tsconfig.node.json"]
       },
       // 支持Vue文件
       vue: {
-        version: "3.0",
-      },
-    },
-  },
-  ignores: ["dist/", "node_modules/", "build/", "public/", "*.d.ts", "*.log"], // 忽略文件
+        version: "3.0"
+      }
+    }
+  }
+  // ignores: ['dist/', 'node_modules/', 'build/', 'public/', '*.d.ts', '*.log'] // 忽略文件
 };
 
 // // 这里时配置规则的,自己看情况配置

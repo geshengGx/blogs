@@ -15,40 +15,40 @@ export default defineConfig({
           overrideConfig: {
             // 开发环境覆盖规则
             rules: {
-              "no-debugger": "off", // 开发允许debugger
-            },
-          },
+              "no-debugger": "off" // 开发允许debugger
+            }
+          }
         },
         build: {
           // 生产构建检查
           overrideConfig: {
             rules: {
-              "no-console": "error", // 生产环境禁止console
-            },
-          },
-        },
+              "no-console": "error" // 生产环境禁止console
+            }
+          }
+        }
       },
 
       // === TypeScript检查 ===
       typescript: {
         tsconfigPath: "./tsconfig.json", // 指定配置
-        buildMode: true, // 构建时也检查
+        buildMode: true // 构建时也检查
       },
 
       // === 其他配置 ===
       overlay: {
         // 错误遮罩层
         position: "br", // 右下角显示
-        initialIsOpen: false, // 不自动弹出
+        initialIsOpen: false // 不自动弹出
       },
-      enableBuild: true, // 构建时启用检查
-    }),
+      enableBuild: true // 构建时启用检查
+    })
   ],
 
   // 解析配置（路径别名）
   resolve: {
     alias: {
-      "@": "/src", // 配置@指向src目录
-    },
-  },
+      "@": "/src" // 配置@指向src目录
+    }
+  }
 });

@@ -12,16 +12,16 @@
     "prepare": "husky install",
     "type-check": "tsc --noEmit"
   },
- 
+
   "lint-staged": {
     "*.{js,ts,vue}": [
-      "eslint --fix",        // 自动修复ESLint错误
-      "prettier --write"     // 自动格式化代码
+      "eslint --fix", // 自动修复ESLint错误
+      "prettier --write" // 自动格式化代码
     ],
     "*.{json,css,scss,md}": [
-      "prettier --write"     // 格式化非代码文件
+      "prettier --write" // 格式化非代码文件
     ]
-  } ,
+  },
   "dependencies": {
     "sass": "^1.89.2",
     "vue": "^3.5.17"

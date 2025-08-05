@@ -15,21 +15,13 @@
   // lint-staged配置：只检查暂存区文件
   "lint-staged": {
     // 前端文件：先ESLint再Prettier
-    "src/**/*.{ts,tsx,vue}": [
-      "eslint --fix --max-warnings 0",
-      "prettier --write"
-    ],
-    
+    "src/**/*.{ts,tsx,vue}": ["eslint --fix --max-warnings 0", "prettier --write"],
+
     // 配置文件：同样处理
-    "vite.config.ts": [
-      "eslint --fix --max-warnings 0",
-      "prettier --write"
-    ],
-    
+    "vite.config.ts": ["eslint --fix --max-warnings 0", "prettier --write"],
+
     // 其他文件：只需Prettier
-    "*.{json,md,yaml,yml}": [
-      "prettier --write"
-    ]
+    "*.{json,md,yaml,yml}": ["prettier --write"]
   },
   "dependencies": {
     "sass": "^1.89.2",

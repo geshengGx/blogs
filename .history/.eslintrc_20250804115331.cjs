@@ -4,7 +4,7 @@ module.exports = {
   env: {
     browser: true, // 支持浏览器全局变量
     es2021: true, // 支持ES2021语法
-    node: true, // 支持Node.js全局变量
+    node: true // 支持Node.js全局变量
   },
 
   // 使用 vue-eslint-parser 作为主解析器，配合 @typescript-eslint/parser 解析 TypeScript
@@ -14,8 +14,8 @@ module.exports = {
     ecmaVersion: "latest", // 使用最新的ECMAScript版本
     sourceType: "module", // 使用ES模块语法
     ecmaFeatures: {
-      jsx: true, // 支持JSX语法（Vue中使用JSX）
-    },
+      jsx: true // 支持JSX语法（Vue中使用JSX）
+    }
   },
 
   // 扩展规则集
@@ -23,7 +23,7 @@ module.exports = {
     "eslint:recommended", // ESLint推荐规则
     "plugin:vue/vue3-recommended", // Vue 3推荐规则
     "plugin:@typescript-eslint/recommended", // TypeScript推荐规则
-    "plugin:prettier/recommended", // Prettier集成（必须放在最后）
+    "plugin:prettier/recommended" // Prettier集成（必须放在最后）
   ],
 
   // 自定义规则
@@ -39,9 +39,9 @@ module.exports = {
         html: {
           void: "always", // 空元素始终自闭合（如<img>）
           normal: "never", // 正常元素不自闭合
-          component: "always", // 组件始终自闭合
-        },
-      },
+          component: "always" // 组件始终自闭合
+        }
+      }
     ],
 
     // TypeScript相关规则
@@ -52,7 +52,7 @@ module.exports = {
     // 通用规则
     "no-console": process.env.NODE_ENV === "production" ? "warn" : "off", // 生产环境禁用console
     "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off", // 生产环境禁用debugger
-    "prettier/prettier": "warn", // Prettier格式化问题作为警告
+    "prettier/prettier": "warn" // Prettier格式化问题作为警告
   },
 
   // 全局变量配置（解决defineProps等Vue宏的未定义警告）
@@ -60,6 +60,6 @@ module.exports = {
     defineProps: "readonly",
     defineEmits: "readonly",
     defineExpose: "readonly",
-    withDefaults: "readonly",
-  },
+    withDefaults: "readonly"
+  }
 };

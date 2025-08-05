@@ -5,16 +5,16 @@ module.exports = {
     overrideConfig: {
       // 开发环境覆盖规则
       rules: {
-        "no-debugger": "off", // 开发允许debugger
-      },
-    },
+        "no-debugger": "off" // 开发允许debugger
+      }
+    }
   },
   build: {
     // 生产构建检查
     overrideConfig: {
       rules: {
-        "no-console": "error", // 生产环境禁止console
-      },
-    },
-  },
+        "no-console": "error" // 生产环境禁止console
+      }
+    }
+  }
 };

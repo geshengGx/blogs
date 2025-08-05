@@ -6,5 +6,5 @@ module.exports = {
   tabWidth: 2, // 缩进大小
   bracketSpacing: true, // 对象括号空格
   arrowParens: "avoid", // 箭头函数单参数省略括号
-  vueIndentScriptAndStyle: true, // Vue文件缩进<script>和<style>
+  vueIndentScriptAndStyle: true // Vue文件缩进<script>和<style>
 };
