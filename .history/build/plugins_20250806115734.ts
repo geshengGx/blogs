@@ -7,8 +7,6 @@ import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import Icons from "unplugin-icons/vite";
 import IconsResolver from "unplugin-icons/resolver";
 import { FileSystemIconLoader } from "unplugin-icons/loaders";
-//原子化css
-import UnoCSS from "unocss/vite";
 
 export const createVitePlugins = () => {
   return [
@@ -73,7 +71,6 @@ export const createVitePlugins = () => {
             .replace(/<svg /, '<svg fill="currentColor" '); // 添加 currentColor
         }) //配置自定义集合的路径库
       }
-    }),
-    UnoCSS()
+    })
   ];
 };

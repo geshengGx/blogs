@@ -1,0 +1,23 @@
+<template>
+  <component
+    is="IconMdi:account"
+    :style="{
+      fontSize: typeof size === 'number' ? `${size}px` : size,
+      color: color
+    }"
+  ></component>
+</template>
+<script setup lang="ts">
+import { IconConfig } from "./config";
+
+withDefaults(defineProps<IconConfig>(), {
+  size: 16,
+  color: "#000"
+});
+
+// const getIcon = computed(() => {
+//   const [collection, icon] = props.icon.split(":");
+//   return `icon-${collection}:${icon}`;
+// });
+</script>
+<style lang="scss" scoped></style>
