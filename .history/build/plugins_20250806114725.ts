@@ -62,7 +62,6 @@ export const createVitePlugins = () => {
       defaultClass: "icon", // 默认类名
       customCollections: {
         local: FileSystemIconLoader("src/assets/icons", svg => {
-          // 自定义图标集加载器(解决无法自定义图标颜色，大小问题)
           return svg
             .replace(/fill=["'][^"']*["']/gi, "") // 移除 fill 属性
             .replace(/stroke=["'][^"']*["']/gi, "") // 移除 stroke 属性

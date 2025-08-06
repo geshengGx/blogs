@@ -6,7 +6,6 @@ import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import Icons from "unplugin-icons/vite";
 import IconsResolver from "unplugin-icons/resolver";
-import { FileSystemIconLoader } from "unplugin-icons/loaders";
 
 export const createVitePlugins = () => {
   return [
@@ -44,33 +43,14 @@ export const createVitePlugins = () => {
         // 自动注册图标组件
         IconsResolver({
           prefix: "icon", // 可选，设置图标组件前缀
-          // alias: {
-          //   // 别名配置
-          //   system: "mdi",
-          //   file: "mdi-file"
-          // },
-          enabledCollections: ["mdi", "ri", "ep"], // 启用的图标集
-          customCollections: ["local"] // **** 这里配置组件内需要使用的自定义集合名
+          alias: {
+            // 别名配置
+            system: "mdi",
+            file: "mdi-file"
+          },
+          enabledCollections: ["mdi", "ri"] // 启用的图标集
         })
       ]
-    }),
-    Icons({
-      autoInstall: true, // 自动安装图标集
-      compiler: "vue3", // Vue 3 编译器
-      scale: 1, // 缩放比例
-      defaultStyle: "display: inline-block;", // 默认样式
-      defaultClass: "icon", // 默认类名
-      customCollections: {
-        local: FileSystemIconLoader("src/assets/icons", svg => {
-          // 自定义图标集加载器(解决无法自定义图标颜色，大小问题)
-          return svg
-            .replace(/fill=["'][^"']*["']/gi, "") // 移除 fill 属性
-            .replace(/stroke=["'][^"']*["']/gi, "") // 移除 stroke 属性
-            .replace(/width=["'][^"']*["']/gi, "") // 移除 width 属性
-            .replace(/height=["'][^"']*["']/gi, "") // 移除 height 属性
-            .replace(/<svg /, '<svg fill="currentColor" '); // 添加 currentColor
-        }) //配置自定义集合的路径库
-      }
     })
   ];
 };

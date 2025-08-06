@@ -10,5 +10,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     ElButton: typeof import('element-plus/es')['ElButton']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    'IconLocal:info': typeof import('~icons/local/info')['default']
+    'IconMdi:account': typeof import('~icons/mdi/account')['default']
   }
 }
