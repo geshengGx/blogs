@@ -8,7 +8,7 @@ import vuePlugin from "eslint-plugin-vue"; // Vue 专用规则
 import tsEslint from "@typescript-eslint/eslint-plugin"; // TS 规则插件
 import tsParser from "@typescript-eslint/parser"; // TS 解析器
 import prettierConfig from "eslint-config-prettier"; // 解决与 Prettier 的冲突
-import eslintrcAutoImport from "./.eslintrc-auto-import.js"; // 自动导入规则
+import eslintrcAutoImport from "./.eslintrc-auto-import"; // 自动导入规则
 
 /**
  * 扁平化配置说明：
@@ -39,7 +39,7 @@ export default [
       globals: {
         ...globals.browser, // 浏览器环境变量 (window, document 等)
         ...globals.node, // Node.js 环境变量 (process, require 等)
-        ...globals.es2021, // ES2021 全局变量
+        ...globals.es2021 // ES2021 全局变量
         ...eslintrcAutoImport.globals // 自动导入规则中的全局变量
       },
 

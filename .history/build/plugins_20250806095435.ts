@@ -30,7 +30,7 @@ export const createVitePlugins = () => {
       resolvers: [ElementPlusResolver()],
       eslintrc: {
         enabled: true, // 启用 ESLint 配置生成
-        filepath: "./.eslintrc-auto-import.js", // 生成的文件路径
+        filepath: "./.eslintrc-auto-import.json", // 指定生成路径
         globalsPropValue: "readonly" // 设置全局变量为只读
       }
     }),

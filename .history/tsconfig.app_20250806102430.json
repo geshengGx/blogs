@@ -48,8 +48,7 @@
     "paths": {
       "@/*": ["src/*"], // src目录别名
       "@components/*": ["src/components/*"],
-      "@assets/*": ["src/assets/*"],
-      "#/*": ["types/*"]
+      "@assets/*": ["src/assets/*"]
     }
   },
 
@@ -60,9 +59,7 @@
     "src/**/*.tsx", // TSX文件（如使用JSX）
     "src/**/*.vue", // Vue单文件组件
     "types/**/*.d.ts", // 全局类型声明
-    "env.d.ts", // Vite环境声明
-    "auto-imports.d.ts",
-    "components.d.ts"
+    "env.d.ts" // Vite环境声明
   ],
 
   // 排除的文件

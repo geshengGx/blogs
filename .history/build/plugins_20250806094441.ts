@@ -26,13 +26,8 @@ export const createVitePlugins = () => {
       vueTsc: true
     }),
     AutoImport({
-      imports: ["vue", "vue-router"], //自动引入vue和vue-router
-      resolvers: [ElementPlusResolver()],
-      eslintrc: {
-        enabled: true, // 启用 ESLint 配置生成
-        filepath: "./.eslintrc-auto-import.js", // 生成的文件路径
-        globalsPropValue: "readonly" // 设置全局变量为只读
-      }
+      imports: ["vue", "vue-router"],
+      resolvers: [ElementPlusResolver()]
     }),
     Components({
       dirs: ["src/components"], // 目录src/components的组件会自动按需引入

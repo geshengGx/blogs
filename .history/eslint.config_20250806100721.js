@@ -8,7 +8,7 @@ import vuePlugin from "eslint-plugin-vue"; // Vue 专用规则
 import tsEslint from "@typescript-eslint/eslint-plugin"; // TS 规则插件
 import tsParser from "@typescript-eslint/parser"; // TS 解析器
 import prettierConfig from "eslint-config-prettier"; // 解决与 Prettier 的冲突
-import eslintrcAutoImport from "./.eslintrc-auto-import.js"; // 自动导入规则
+import eslintrcAutoImport from "./.eslintrc-auto-import"; // 自动导入规则
 
 /**
  * 扁平化配置说明：
