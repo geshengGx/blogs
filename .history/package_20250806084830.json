@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --",
+    "dev": "vite",
     "build": "vue-tsc -b && vite build",
     "type-check": "tsc --build --force",
     "type-check:app": "tsc -p tsconfig.app.json --noEmit",
@@ -17,21 +17,10 @@
     "lint:css:fix": "stylelint \"**/*.{css,scss,vue}\" --fix"
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx,vue}": [
-      "eslint --fix --max-warnings 0",
-      "prettier --write"
-    ],
-    "vite.config.ts": [
-      "eslint --fix --max-warnings 0",
-      "prettier --write"
-    ],
-    "*.{json,md,yaml,yml}": [
-      "prettier --write"
-    ],
-    "*.{css,scss,sass,less}": [
-      "stylelint --fix",
-      "prettier --write"
-    ]
+    "src/**/*.{ts,tsx,vue}": ["eslint --fix --max-warnings 0", "prettier --write"],
+    "vite.config.ts": ["eslint --fix --max-warnings 0", "prettier --write"],
+    "*.{json,md,yaml,yml}": ["prettier --write"],
+    "*.{css,scss,sass,less}": ["stylelint --fix", "prettier --write"]
   },
   "dependencies": {
     "sass": "^1.89.2",
