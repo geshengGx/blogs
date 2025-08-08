@@ -86,7 +86,6 @@ export const createVitePlugins = (viteEnv: ViteEnv): (PluginOption | PluginOptio
       symbolId: "local-[dir]-[name]",
       // 优化SVG
       svgoOptions: {
-        //解决无法自定义图标颜色，大小问题
         plugins: [
           {
             name: "removeAttrs",

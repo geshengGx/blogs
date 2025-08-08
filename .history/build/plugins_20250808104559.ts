@@ -78,7 +78,6 @@ export const createVitePlugins = (viteEnv: ViteEnv): (PluginOption | PluginOptio
         }) //配置自定义集合的路径库
       }
     }),
-    //使用svg图标
     createSvgIconsPlugin({
       // 本地图标目录
       iconDirs: [resolve(process.cwd(), "src/assets/icons")],
@@ -86,7 +85,6 @@ export const createVitePlugins = (viteEnv: ViteEnv): (PluginOption | PluginOptio
       symbolId: "local-[dir]-[name]",
       // 优化SVG
       svgoOptions: {
-        //解决无法自定义图标颜色，大小问题
         plugins: [
           {
             name: "removeAttrs",

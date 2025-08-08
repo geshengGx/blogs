@@ -13,6 +13,6 @@ declare module 'vue' {
     'IconLocal:info': typeof import('~icons/local/info')['default']
     'IconMdi:account': typeof import('~icons/mdi/account')['default']
     SelectIcon: typeof import('./src/components/Icon/SelectIcon/index.vue')['default']
-    UIcon: typeof import('./src/components/Icon/UIcon/index.vue')['default']
+    UIcon: typeof import('./src/components/UIcon/index.vue')['default']
   }
 }

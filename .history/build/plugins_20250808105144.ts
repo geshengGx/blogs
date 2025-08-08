@@ -83,10 +83,9 @@ export const createVitePlugins = (viteEnv: ViteEnv): (PluginOption | PluginOptio
       // 本地图标目录
       iconDirs: [resolve(process.cwd(), "src/assets/icons")],
       // 本地图标ID格式
-      symbolId: "local-[dir]-[name]",
+      symbolId: "local-[dir]-[name]"
       // 优化SVG
       svgoOptions: {
-        //解决无法自定义图标颜色，大小问题
         plugins: [
           {
             name: "removeAttrs",
