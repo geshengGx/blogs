@@ -1,0 +1,31 @@
+{
+  // 此文件作为项目入口，不直接包含文件
+  "files": ["src/types/global.d.ts"],
+
+  // 项目引用配置 - 定义所有子项目
+  "references": [
+    { "path": "./tsconfig.app.json" }, // 前端应用配置
+    { "path": "./tsconfig.node.json" } // Node环境配置（Vite等）
+  ],
+
+  // 全局编译器选项 - 应用于所有子项目
+  "compilerOptions": {
+    // 严格类型检查 - 确保代码质量
+    "strict": true,
+
+    // 禁止隐式any类型 - 提高类型安全性
+    "noImplicitAny": true,
+
+    // 强制文件名大小写一致 - 避免跨平台问题
+    "forceConsistentCasingInFileNames": true,
+
+    // 跳过声明文件检查 - 加速编译
+    "skipLibCheck": true,
+
+    // 启用顶级await - 现代JavaScript特性
+    "allowUnreachableCode": false
+
+    // 禁用无法访问的代码 - 减少死代码
+    // "allowUnreachableCode": false
+  }
+}
