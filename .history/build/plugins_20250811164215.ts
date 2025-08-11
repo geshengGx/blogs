@@ -152,24 +152,24 @@ const createCompression = (viteEnv: ViteEnv): PluginOption | PluginOption[] => {
   if (compressList.includes("gzip")) {
     plugins.push(
       viteCompression({
-        algorithm: "gzip", // 压缩算法
-        ext: ".gz", // 生成的文件扩展名
-        threshold: 10240, // 仅压缩大于 10KB 的文件
-        deleteOriginFile: VITE_BUILD_COMPRESS_DELETE_ORIGIN_FILE, // 是否删除原始文件
-        compressionOptions: { level: 9 } // 压缩级别，1-9，越高压缩率越大
-        // filter: /.(js|css|json|html|ico|svg)(\?.*)?$/i // 过滤文件类型(指定哪些资源不压缩)
+        ext: ".gz",
+        algorithm: "gzip",
+        deleteOriginFile: VITE_BUILD_COMPRESS_DELETE_ORIGIN_FILE
+        algorithm: 'gzip', // 使用 gzip 压缩
+      ext: '.gz', // 生成的文件扩展名
+      threshold: 10240, // 仅压缩大于 10KB 的文件
+      deleteOriginFile: false, // 是否删除原始文件
+      compressionOptions: { level: 9 }, // 压缩级别，1-9，越高压缩率越大
+      filter: /.(js|css|json|html|ico|svg)(?.*)?$/i, // 过滤文件类型
       })
     );
   }
   if (compressList.includes("brotli")) {
     plugins.push(
       viteCompression({
-        algorithm: "brotliCompress", // 压缩算法
-        ext: ".br", // 生成的文件扩展名
-        threshold: 10240, // 仅压缩大于 10KB 的文件
-        deleteOriginFile: VITE_BUILD_COMPRESS_DELETE_ORIGIN_FILE, // 是否删除原始文件
-        compressionOptions: { level: 9 } // 压缩级别，1-9，越高压缩率越大
-        // filter: /.(js|css|json|html|ico|svg)(\?.*)?$/i // 过滤文件类型(指定哪些资源不压缩)
+        ext: ".br",
+        algorithm: "brotliCompress",
+        deleteOriginFile: VITE_BUILD_COMPRESS_DELETE_ORIGIN_FILE
       })
     );
   }

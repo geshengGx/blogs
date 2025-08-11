@@ -27,8 +27,6 @@ import { visualizer } from "rollup-plugin-visualizer";
 import { createHtmlPlugin } from "vite-plugin-html";
 //添加pwa支持（pwa应用）在地址栏输入 chrome://apps/（Edge 是 edge://apps/）查看
 import { VitePWA } from "vite-plugin-pwa";
-//添加压缩功能
-import viteCompression from "vite-plugin-compression";
 
 export const createVitePlugins = (viteEnv: ViteEnv): (PluginOption | PluginOption[])[] => {
   const { VITE_GLOB_APP_TITLE, VITE_REPORT, VITE_DEVTOOLS, VITE_PWA, VITE_CODEINSPECTOR } = viteEnv;
@@ -56,8 +54,6 @@ export const createVitePlugins = (viteEnv: ViteEnv): (PluginOption | PluginOptio
     }),
     // vitePWA
     VITE_PWA && createVitePwa(viteEnv),
-    // 创建打包压缩配置
-    createCompression(viteEnv),
     //错误检查
     checker({
       // 实时检查
@@ -139,41 +135,6 @@ export const createVitePlugins = (viteEnv: ViteEnv): (PluginOption | PluginOptio
     }),
     UnoCSS()
   ];
-};
-
-/**
- * @description 根据 compress 配置，生成不同的压缩规则
- * @param viteEnv
- */
-const createCompression = (viteEnv: ViteEnv): PluginOption | PluginOption[] => {
-  const { VITE_BUILD_COMPRESS = "none", VITE_BUILD_COMPRESS_DELETE_ORIGIN_FILE } = viteEnv;
-  const compressList = VITE_BUILD_COMPRESS.split(",");
-  const plugins: PluginOption[] = [];
-  if (compressList.includes("gzip")) {
-    plugins.push(
-      viteCompression({
-        algorithm: "gzip", // 压缩算法
-        ext: ".gz", // 生成的文件扩展名
-        threshold: 10240, // 仅压缩大于 10KB 的文件
-        deleteOriginFile: VITE_BUILD_COMPRESS_DELETE_ORIGIN_FILE, // 是否删除原始文件
-        compressionOptions: { level: 9 } // 压缩级别，1-9，越高压缩率越大
-        // filter: /.(js|css|json|html|ico|svg)(\?.*)?$/i // 过滤文件类型(指定哪些资源不压缩)
-      })
-    );
-  }
-  if (compressList.includes("brotli")) {
-    plugins.push(
-      viteCompression({
-        algorithm: "brotliCompress", // 压缩算法
-        ext: ".br", // 生成的文件扩展名
-        threshold: 10240, // 仅压缩大于 10KB 的文件
-        deleteOriginFile: VITE_BUILD_COMPRESS_DELETE_ORIGIN_FILE, // 是否删除原始文件
-        compressionOptions: { level: 9 } // 压缩级别，1-9，越高压缩率越大
-        // filter: /.(js|css|json|html|ico|svg)(\?.*)?$/i // 过滤文件类型(指定哪些资源不压缩)
-      })
-    );
-  }
-  return plugins;
 };
 
 /**
