@@ -1,0 +1,25 @@
+/* 响应式工具类 */
+.responsive-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 clamp(1rem, 3vw, 2rem);
+  margin: 0 auto;
+}
+.responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+.responsive-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+.fluid-text {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+/* Element Plus 表单响应式 */
+.responsive-form .el-form-item {
+  margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
+}

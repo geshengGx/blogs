@@ -49,7 +49,9 @@
     "@typescript-eslint/eslint-plugin": "^8.38.0",
     "@typescript-eslint/parser": "^8.38.0",
     "@vitejs/plugin-vue": "^6.0.0",
+    "@vitejs/plugin-vue-jsx": "^5.0.1",
     "@vue/tsconfig": "^0.7.0",
+    "autoprefixer": "^10.4.21",
     "eslint": "^9.32.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.3",
@@ -78,9 +80,11 @@
     "unplugin-auto-import": "^20.0.0",
     "unplugin-icons": "^22.2.0",
     "unplugin-vue-components": "^28.8.0",
+    "unplugin-vue-setup-extend-plus": "^1.0.1",
     "vite": "^7.0.4",
     "vite-plugin-checker": "^0.10.2",
     "vite-plugin-svg-icons": "^2.0.1",
+    "vite-plugin-vue-devtools": "^8.0.0",
     "vue-eslint-parser": "^10.2.0",
     "vue-tsc": "^2.2.12"
   }
