@@ -26,7 +26,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       port: viteEnv.VITE_PORT,
       open: viteEnv.VITE_OPEN,
       cors: true,
-      // 代理配置
+      // Load proxy configuration from .env.development
       proxy: createProxy(viteEnv.VITE_PROXY)
     }
   };
