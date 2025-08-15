@@ -42,5 +42,5 @@ module.exports = {
     ]
   },
   // 忽略文件
-  ignoreFiles: ["**/*.js", "**/*.jsx", "**/*.tsx", "**/*.ts", "**/.history/**"]
+  ignoreFiles: ["**/*.js", "**/*.jsx", "**/*.tsx", "**/*.ts", "**/history/**"]
 };
