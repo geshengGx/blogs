@@ -11,7 +11,14 @@
     "type-check:node": "tsc -p tsconfig.node.json --noEmit",
     "lint": "eslint . --ext .ts,.vue --fix --max-warnings 0",
     "format": "prettier --write .",
-    "prepare": "husky install",
+    // "prepare": "npm run lint && npm run type-check", //这是 npm 的生命周期脚本，在包安装完成后自动执行
+    "postinstall": "husky install", //另一个 npm 生命周期脚本，在以下情况自动执行：
+
+npm install 或 pnpm install 后
+
+包发布前（npm publish）
+
+本地包链接时（npm link）
     "lint:css": "stylelint \"**/*.{css,scss,vue}\"",
     "lint:css:fix": "stylelint \"**/*.{css,scss,vue}\" --fix"
   },
