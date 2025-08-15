@@ -18,6 +18,9 @@ module.exports = {
     {
       files: ["**/*.{vue,html}"],
       customSyntax: "postcss-html"
+    },
+    {
+      files: ["**/*.vue"]
     }
   ],
   // 自定义规则

@@ -32,13 +32,13 @@ module.exports = {
     "selector-class-pattern": null, // 强制选择器类名的格式
     "value-no-vendor-prefix": null, // 关闭 vendor-prefix (为了解决多行省略 -webkit-box)
     "no-descending-specificity": null, // 不允许较低特异性的选择器出现在覆盖较高特异性的选择器
-    "value-keyword-case": null, // 解决在 scss 中使用 v-bind 大写单词报错
-    "selector-pseudo-class-no-unknown": [
-      true,
-      {
-        ignorePseudoClasses: ["global", "v-deep", "deep", "::v-deep", "slotted"] // 忽略的伪类(允许使用)
-      }
-    ]
+    "value-keyword-case": null // 解决在 scss 中使用 v-bind 大写单词报错
+    // "selector-pseudo-class-no-unknown": [
+    //   true,
+    //   {
+    //     ignorePseudoClasses: ["global", "v-deep", "deep", "::v-deep", "slotted"] // 忽略的伪类(允许使用)
+    //   }
+    // ]
   },
   // 忽略文件
   ignoreFiles: ["**/*.js", "**/*.jsx", "**/*.tsx", "**/*.ts"]

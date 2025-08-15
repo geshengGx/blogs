@@ -18,6 +18,9 @@ module.exports = {
     {
       files: ["**/*.{vue,html}"],
       customSyntax: "postcss-html"
+    },
+    {
+      files: ["**/*.vue"]
     }
   ],
   // 自定义规则
@@ -36,7 +39,7 @@ module.exports = {
     "selector-pseudo-class-no-unknown": [
       true,
       {
-        ignorePseudoClasses: ["global", "v-deep", "deep", "::v-deep", "slotted"] // 忽略的伪类(允许使用)
+        ignorePseudoClasses: ["global", "v-deep", "deep", "::v-deep", "slotted"] // 忽略的伪类
       }
     ]
   },
