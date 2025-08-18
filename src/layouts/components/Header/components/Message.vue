@@ -2,9 +2,7 @@
   <div class="message">
     <el-popover :width="300">
       <template #reference>
-        <el-tooltip content="信息" placement="bottom" effect="light">
-          <i class="iconfont icon-xiaoxi toolBar-icon" />
-        </el-tooltip>
+        <i class="iconfont icon-xiaoxi toolBar-icon" />
       </template>
       <template #default>
         <el-tabs v-model="activeName" @tab-click="handleClick" :stretch="true">
