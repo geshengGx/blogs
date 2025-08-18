@@ -13,7 +13,10 @@
       </el-scrollbar>
     </div>
     <div class="layout_content">
-      <div class="layout_content_header"></div>
+      <div class="layout_content_header nowrap-hidden">
+        <ToolBarLeft />
+        <ToolBarRight />
+      </div>
       <div class="layout_content_tabs"></div>
       <div class="layout_content_main">
         <div class="bg-amber wh-full"></div>
@@ -24,6 +27,8 @@
 </template>
 <script setup lang="ts">
 import SubMenu from "../components/Menu/SubMenu.vue";
+import ToolBarLeft from "../components/Header/ToolBarLeft.vue";
+import ToolBarRight from "../components/Header/ToolBarRight.vue";
 
 const menuList = [
   {

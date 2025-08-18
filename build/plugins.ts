@@ -2,7 +2,7 @@ import { PluginOption } from "vite";
 import { resolve } from "path";
 import vue from "@vitejs/plugin-vue";
 import checker from "vite-plugin-checker"; //导入包
-//按需引入(图标地址：https://icon-sets.iconify.design/?category=General)
+//按需引入(图标地址：https://icon-sets.iconify.design/)
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
