@@ -1,9 +1,0 @@
-import { createApp } from "vue";
-import "@/styles/reset.scss"; // 重置样式
-import "virtual:uno.css"; // 引入UnoCSS
-import "virtual:svg-icons-register"; // 引入svg图标
-import "@/assets/iconfont/iconfont.css"; // 引入iconfont图标
-
-import App from "./App.vue";
-
-createApp(App).mount("#app");
