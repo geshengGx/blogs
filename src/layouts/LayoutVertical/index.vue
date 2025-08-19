@@ -17,7 +17,7 @@
         <ToolBarLeft />
         <ToolBarRight />
       </div>
-      <div class="layout_content_tabs"></div>
+      <Tabs />
       <div class="layout_content_main">
         <div class="bg-amber wh-full"></div>
       </div>
@@ -29,6 +29,7 @@
 import SubMenu from "../components/Menu/SubMenu.vue";
 import ToolBarLeft from "../components/Header/ToolBarLeft.vue";
 import ToolBarRight from "../components/Header/ToolBarRight.vue";
+import Tabs from "../components/Tabs/index.vue";
 
 const menuList = [
   {
