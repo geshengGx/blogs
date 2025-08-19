@@ -21,18 +21,6 @@
     background-color: var(--el-bg-color);
     border-bottom: 1px solid #f0f0f0;
   }
-  .layout_content_main {
-    width: 100%;
-    height: calc(100% - 140px);
-    padding: 10px;
-  }
-  .layout_content_footer {
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    background-color: var(--el-bg-color);
-    border-top: 1px solid #f0f0f0;
-  }
 }
 .el-menu {
   border: none;

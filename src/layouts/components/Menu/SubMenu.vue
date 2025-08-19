@@ -22,7 +22,25 @@ defineProps<{ menuList: Menu.MenuOptions[] }>();
 
 <style lang="scss">
 .el-sub-menu .el-sub-menu__title:hover {
-  color: var(--el-menu-hover-text-color) !important;
   background-color: transparent !important;
+}
+.el-menu-item {
+  position: relative;
+  box-sizing: border-box;
+  &:hover {
+    background-color: var(--el-color-info-light-7);
+  }
+  &.is-active {
+    background-color: var(--el-color-primary-light-9);
+    &::before {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 3px;
+      content: "";
+      background-color: var(--el-color-primary);
+    }
+  }
 }
 </style>

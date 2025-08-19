@@ -5,7 +5,7 @@
         <el-tab-pane :name="item">
           <template #label>
             <u-icon icon="local:info" class="text-15px mt-1.5px mr-4px" />
-            <span>{{ `Tab标签 ${item}` }} </span>
+            <span class="text-15px">{{ `用户管理` }} </span>
           </template>
         </el-tab-pane>
       </template>

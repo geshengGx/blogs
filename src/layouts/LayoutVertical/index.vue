@@ -7,7 +7,7 @@
         <span class="font-bold text-lg nowrap-hidden">后台管理系统</span>
       </div>
       <el-scrollbar class="!h-[calc(100%-50px)]">
-        <el-menu>
+        <el-menu :router="true" :unique-opened="true" :collapse-transition="false">
           <SubMenu :menu-list="menuList" />
         </el-menu>
       </el-scrollbar>
@@ -17,11 +17,7 @@
         <ToolBarLeft />
         <ToolBarRight />
       </div>
-      <Tabs />
-      <div class="layout_content_main">
-        <div class="bg-amber wh-full"></div>
-      </div>
-      <div class="layout_content_footer"></div>
+      <Main />
     </div>
   </div>
 </template>
@@ -29,7 +25,7 @@
 import SubMenu from "../components/Menu/SubMenu.vue";
 import ToolBarLeft from "../components/Header/ToolBarLeft.vue";
 import ToolBarRight from "../components/Header/ToolBarRight.vue";
-import Tabs from "../components/Tabs/index.vue";
+import Main from "../components/Main/index.vue";
 
 const menuList = [
   {
