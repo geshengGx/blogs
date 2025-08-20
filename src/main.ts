@@ -4,6 +4,12 @@ import "virtual:uno.css"; // 引入UnoCSS
 import "virtual:svg-icons-register"; // 引入svg图标
 import "@/assets/iconfont/iconfont.css"; // 引入iconfont图标
 
+import router from "@/routers"; // 引入路由
+
 import App from "./App.vue";
 
-createApp(App).mount("#app");
+const app = createApp(App);
+
+app.use(router);
+
+app.mount("#app");

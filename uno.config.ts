@@ -80,7 +80,7 @@ export default defineConfig({
   // 快捷方式
   shortcuts: [
     ["toolBar-icon", "!text-26px cursor-pointer hover:text-[var(--el-color-primary)]"],
-    ["layout", "w-100vw h-100vh bg-gray-100 dark:bg-gray-900 "],
+    ["layout", "w-100vw h-100vh "],
     ["card", "p-6 bg-white rounded-lg shadow-md dark:bg-gray-800"],
     ["wh-full", "w-full h-full"],
     ["flex-center", "flex justify-center items-center"],

@@ -1,9 +1,9 @@
 @font-face {
   font-family: iconfont; /* Project id 4681280 */
   src:
-    url("iconfont.woff2?t=1755484694566") format("woff2"),
-    url("iconfont.woff?t=1755484694566") format("woff"),
-    url("iconfont.ttf?t=1755484694566") format("truetype");
+    url("iconfont.woff2?t=1755674079609") format("woff2"),
+    url("iconfont.woff?t=1755674079609") format("woff"),
+    url("iconfont.ttf?t=1755674079609") format("truetype");
 }
 .iconfont {
   font-family: iconfont !important;
@@ -11,6 +11,9 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.icon-tuichu::before {
+  content: "\e619";
 }
 .icon-shousuo::before {
   content: "\e639";
