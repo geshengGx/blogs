@@ -29,6 +29,9 @@ importers:
       screenfull:
         specifier: ^6.0.2
         version: 6.0.2
+      sortablejs:
+        specifier: ^1.15.6
+        version: 1.15.6
       vue:
         specifier: ^3.5.17
         version: 3.5.18(typescript@5.8.3)
@@ -3864,6 +3867,9 @@ packages:
   snapdragon@0.8.2:
     resolution: {integrity: sha512-FtyOnWN/wCHTVXOMwvSv26d+ko5vWlIDD6zoUJ7LW8vh+ZBC8QdljveRP+crNrtBwioEUWy/4dMtbBjA4ioNlg==}
     engines: {node: '>=0.10.0'}
+
+  sortablejs@1.15.6:
+    resolution: {integrity: sha512-aNfiuwMEpfBM/CN6LY0ibyhxPfPbyFeBTYJKCvzkJ2GkUpazIt3H+QIPAMHwqQ7tMKaHz1Qj+rJJCqljnf4p3A==}
 
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
@@ -8682,6 +8688,8 @@ snapshots:
       use: 3.1.1
     transitivePeerDependencies:
       - supports-color
+
+  sortablejs@1.15.6: {}
 
   source-map-js@1.2.1: {}
 

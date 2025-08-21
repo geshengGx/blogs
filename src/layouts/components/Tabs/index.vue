@@ -14,6 +14,7 @@
   </div>
 </template>
 <script setup lang="ts">
+import Sortable from "sortablejs";
 import MoreButton from "./components/MoreButton.vue";
 import type { TabsPaneContext } from "element-plus";
 
@@ -22,6 +23,21 @@ const activeName = ref(1);
 const handleClick = (tab: TabsPaneContext, event: Event) => {
   console.log(tab, event);
 };
+
+// tabs 拖拽排序
+const tabsDrop = () => {
+  Sortable.create(document.querySelector(".el-tabs__nav") as HTMLElement, {
+    draggable: ".el-tabs__item",
+    animation: 300,
+    onEnd({ newIndex, oldIndex }) {
+      console.log(newIndex, oldIndex);
+    }
+  });
+};
+
+onMounted(() => {
+  tabsDrop();
+});
 </script>
 <style lang="scss" scoped>
 .tabs {

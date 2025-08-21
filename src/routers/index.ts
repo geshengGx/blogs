@@ -5,10 +5,10 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
 const routes: RouteRecordRaw[] = [
-  //   {
-  //     path: "/",
-  //     redirect: "/layout"
-  //   },
+  {
+    path: "/",
+    redirect: "/home"
+  },
   {
     path: "/layout",
     name: "layout",

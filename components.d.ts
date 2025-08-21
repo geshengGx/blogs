@@ -31,6 +31,8 @@ declare module 'vue' {
     'IconEp:fold': typeof import('~icons/ep/fold')['default']
     'IconLocal:info': typeof import('~icons/local/info')['default']
     'IconMdi:account': typeof import('~icons/mdi/account')['default']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
     SelectIcon: typeof import('./src/components/Icon/SelectIcon/index.vue')['default']
     UIcon: typeof import('./src/components/UIcon/index.vue')['default']
   }
