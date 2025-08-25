@@ -3,7 +3,9 @@
  */
 
 import { createPinia } from "pinia";
-import { createPersistedState } from "pinia-plugin-persistedstate"; // 引入持久化插件
+import createPersistedState from "./helper/uPersist";
 
 const pinia = createPinia();
-pinia.use(createPersistedState());
+pinia.use(createPersistedState);
+
+export default pinia;

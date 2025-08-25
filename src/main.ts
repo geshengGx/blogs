@@ -5,11 +5,11 @@ import "virtual:svg-icons-register"; // 引入svg图标
 import "@/assets/iconfont/iconfont.css"; // 引入iconfont图标
 
 import router from "@/routers"; // 引入路由
+import pinia from "@/stores"; // 引入pinia
 
 import App from "./App.vue";
 
 const app = createApp(App);
-
 app.use(router);
-
+app.use(pinia);
 app.mount("#app");
