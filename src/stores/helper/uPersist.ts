@@ -1,20 +1,22 @@
 import { storage, StorageType } from "./storage";
-import type { PersistenceOptions } from "@/types/pinia";
+import { persist, PersistenceOptions } from "@/types/pinia";
 
-const StateMap = new Map<string, PersistenceOptions>();
+interface MapItem {
+  value: any; // 存储的值
+  expire?: number; // 过期时间戳（毫秒）
+  storage?: StorageType; // 存储值的类型（用于反序列化时判断）
+}
+
+const StateMap = new Map<string, MapItem>();
 
 // 从存储中恢复状态到store
 const hydrateStore = store => {
   let values = {};
-  for (const MapKey of StateMap.keys()) {
-    if (MapKey.split("_")[0] === store.$id) {
-      const Map = StateMap.get(MapKey);
-      const Key = `${store.$id}_${Map.key}`;
-      storage.changeOptions({ type: Map.storage || StorageType.LOCAL });
-      const value = storage.get(Key);
-      if (value) {
-        values = { ...values, ...value };
-      }
+  for (const Map of StateMap) {
+    const key = Map[0];
+    if (key.split("_")[0] === store.$id) {
+      storage.changeOptions({ type: Map[1].storage });
+      values = { ...values, ...storage.get(key) };
     }
   }
   store.$patch(values);
@@ -22,55 +24,69 @@ const hydrateStore = store => {
 
 // 将store的状态持久化到存储中
 const persistState = ({ storeId }, state) => {
-  for (const MapKey of StateMap.keys()) {
-    if (MapKey.split("_")[0] === storeId) {
-      const Map = StateMap.get(MapKey);
-      const include = getState(Map, state);
-      const value = {};
-      for (const store in include) {
-        value[include[store]] = state[include[store]];
-      }
-
-      storage.changeOptions({ type: Map.storage || StorageType.LOCAL });
-
-      if (Map.expire) {
-        storage.set(MapKey, value, Map.expire);
+  for (const Map of StateMap) {
+    const key = Map[0];
+    if (key.split("_")[0] === storeId) {
+      Map[1].value = getState(filter(Object.keys(Map[1].value), Object.keys(state), 2), state);
+      storage.changeOptions({ type: Map[1].storage });
+      if (Map[1].expire) {
+        storage.set(key, Map[1].value, Map[1].expire);
       } else {
-        storage.set(MapKey, value);
+        storage.set(key, Map[1].value);
       }
     }
   }
 };
 
 //存储各个存储字段配置
-const setStateMap = (persist, storeId) => {
+const setStateMap = (persist: persist, store) => {
+  const state = store.$state;
   if (Array.isArray(persist)) {
-    for (let i = 0; i < persist.length; i++) {
-      const item = persist[i];
-      StateMap.set(`${storeId}_${item.key}`, item);
-    }
+    persist.forEach(item => {
+      StateMap.set(`${store.$id}_${item.key}`, handleStateMap(item, state));
+    });
   } else if (typeof persist === "object") {
-    StateMap.set(`${storeId}_${persist.key}`, persist);
-  } else {
-    StateMap.set(storeId, persist);
+    StateMap.set(`${store.$id}_${persist.key}`, handleStateMap(persist, state));
+  } else if (typeof persist === "boolean") {
+    StateMap.set(`${store.$id}`, { value: state, storage: StorageType.LOCAL });
   }
 };
 
-//获取要保存的数据
-const getState = (map, state) => {
-  const include = [];
-  if (map.omit) {
-    if (map.pick) {
-      include.push(...map.pick.filter(item => !map.omit.includes(item) && state[item] !== undefined));
-    } else {
-      include.push(...Object.keys(state).filter(item => !map.omit.includes(item)));
-    }
-  } else if (map.pick) {
-    include.push(...map.pick.filter(item => state[item] !== undefined));
-  } else {
-    include.push(...Object.keys(state));
+// 计算交集函数
+const filter = (arr1, arr2, type = 1) => {
+  // 使用Set和filter方法找出交集
+  const set2 = new Set(arr2);
+  return arr1.filter(item => (type == 1 ? !set2.has(item) : set2.has(item)));
+};
+
+// 获取state
+const getState = (include: string[], state) => {
+  const value = {};
+  for (let i = 0; i < include.length; i++) {
+    value[include[i]] = state[include[i]];
   }
-  return include;
+  return value;
+};
+
+//  获取存储字段配置
+const handleStateMap = (persist: PersistenceOptions, state): MapItem => {
+  let include = [];
+  if (persist.omit) {
+    if (persist.pick) {
+      include = filter(Object.keys(state), filter(persist.pick, persist.omit), 2);
+    } else {
+      include = filter(Object.keys(state), persist.omit);
+    }
+  } else if (persist.pick) {
+    include = filter(Object.keys(state), persist.pick, 2);
+  } else {
+    include = Object.keys(state);
+  }
+  return {
+    value: getState(include, state),
+    storage: persist.storage || StorageType.LOCAL,
+    expire: persist.expire
+  };
 };
 
 // 创建持久化的功能
@@ -84,7 +100,7 @@ const createPersistedState = (context?) => {
   if (!persist) return;
 
   // 获取持久化配置
-  setStateMap(persist, store.$id);
+  setStateMap(persist, store);
 
   // 将数据从存储中恢复状态到store
   hydrateStore(store);

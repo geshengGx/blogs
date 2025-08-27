@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { StorageType } from "@/stores/helper/storage";
+// import { StorageType } from "@/stores/helper/storage";
 
 export const useSyStore2 = defineStore(
   "sy2",
@@ -22,23 +22,6 @@ export const useSyStore2 = defineStore(
     };
   },
   {
-    persist: [
-      {
-        key: "sy1",
-        pick: ["a", "b", "c"],
-        storage: StorageType.COOKIE,
-        expire: 1000 * 10
-      },
-      {
-        key: "sy2",
-        storage: StorageType.SESSION,
-        omit: ["a"]
-      },
-      {
-        key: "sy3",
-        storage: StorageType.LOCAL,
-        omit: ["a"]
-      }
-    ]
+    persist: true
   }
 );

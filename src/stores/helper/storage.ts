@@ -237,7 +237,7 @@ export class Storage {
     if (this.options.type === StorageType.COOKIE) {
       this.removeCookie(key);
     } else {
-      window[this.options.type].removeItem(this.options.prefix + key);
+      window[this.options.type].removeItem(this.getPrefixedKey(key));
     }
   }
 

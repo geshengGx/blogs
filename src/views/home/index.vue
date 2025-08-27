@@ -42,5 +42,6 @@ const del2 = () => {
 onMounted(() => {
   console.log("数据11===========》", sy.a, sy.b);
   console.log("数据22===========》", sy2.a1, sy2.b2);
+  console.log("数据333===========》", typeof { a: 1, b: 2 });
 });
 </script>
