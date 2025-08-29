@@ -5,7 +5,7 @@
     </el-tooltip>
   </div>
   <teleport to="#app">
-    <ThemeDrawer v-model="visible" />
+    <ThemeDrawer v-model="visible" title="系统设置" />
   </teleport>
 </template>
 <script setup lang="ts">

@@ -1,10 +1,10 @@
 <template>
   <!-- 对话框 -->
-  <el-dialog v-model="visible" @close="close" :draggable="true" v-bind="$attrs" :width="width" v-if="!formDrawer">
+  <el-dialog v-model="visible" :destroy-on-close="true" @close="close" :draggable="true" v-bind="$attrs" :width="width" v-if="!formDrawer">
     <template v-for="slotKey in slotKeys" #[slotKey]> <slot :name="slotKey" /></template>
   </el-dialog>
   <!-- 抽屉 -->
-  <el-drawer v-model="visible" @close="close" v-bind="$attrs" :size="width" v-else>
+  <el-drawer v-model="visible" :destroy-on-close="true" @close="close" v-bind="$attrs" :size="width" v-else>
     <template v-for="slotKey in slotKeys" #[slotKey]> <slot :name="slotKey" /></template>
   </el-drawer>
 </template>
@@ -37,3 +37,4 @@ const close = () => {
   emit("close");
 };
 </script>
+<style lang="scss" scoped></style>
