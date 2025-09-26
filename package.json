@@ -35,8 +35,11 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.2",
     "@iconify/vue": "^5.0.0",
+    "@types/marked": "^6.0.0",
     "destr": "^2.0.5",
     "element-plus": "^2.10.5",
+    "highlight.js": "^11.11.1",
+    "marked": "^16.3.0",
     "pinia": "^3.0.3",
     "sass": "^1.89.2",
     "screenfull": "^6.0.2",

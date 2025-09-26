@@ -7,10 +7,12 @@ import "@/assets/iconfont/iconfont.css"; // 引入iconfont图标
 
 import router from "@/routers"; // 引入路由
 import pinia from "@/stores"; // 引入pinia
+import highlight from "@/plugins/highlight"; // 引入代码高亮
 
 import App from "./App.vue";
 
 const app = createApp(App);
 app.use(router);
 app.use(pinia);
+app.use(highlight);
 app.mount("#app");
